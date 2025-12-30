@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -93,60 +92,65 @@ const rtRwData: RTRWData[] = [
 // Center of the village (approximate)
 const villageCenter: [number, number] = [-7.0056, 110.4376];
 
-const SetViewOnCenter = ({ center }: { center: [number, number] }) => {
-  const map = useMap();
-  useEffect(() => {
-    map.setView(center, 15);
-  }, [center, map]);
-  return null;
-};
-
 interface VillageMapProps {
   className?: string;
 }
 
 const VillageMap = ({ className = "" }: VillageMapProps) => {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    if (!mapRef.current || mapInstanceRef.current) return;
+
+    // Initialize map
+    const map = L.map(mapRef.current).setView(villageCenter, 15);
+    mapInstanceRef.current = map;
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    // Add markers for each RT/RW
+    rtRwData.forEach((data) => {
+      const marker = L.marker(data.position, { icon: customIcon }).addTo(map);
+      
+      const popupContent = `
+        <div style="padding: 8px; min-width: 200px;">
+          <h3 style="font-weight: bold; font-size: 16px; color: #2d5016; margin-bottom: 8px;">${data.name}</h3>
+          <div style="font-size: 14px; line-height: 1.6;">
+            <p style="display: flex; justify-content: space-between; margin: 4px 0;">
+              <span style="color: #666;">Kepala Keluarga:</span>
+              <span style="font-weight: 600;">${data.kepalaKeluarga} KK</span>
+            </p>
+            <p style="display: flex; justify-content: space-between; margin: 4px 0;">
+              <span style="color: #666;">Total Penduduk:</span>
+              <span style="font-weight: 600;">${data.jumlahPenduduk} jiwa</span>
+            </p>
+            <p style="display: flex; justify-content: space-between; margin: 4px 0;">
+              <span style="color: #666;">Laki-laki:</span>
+              <span style="font-weight: 600;">${data.lakilaki} jiwa</span>
+            </p>
+            <p style="display: flex; justify-content: space-between; margin: 4px 0;">
+              <span style="color: #666;">Perempuan:</span>
+              <span style="font-weight: 600;">${data.perempuan} jiwa</span>
+            </p>
+          </div>
+        </div>
+      `;
+      
+      marker.bindPopup(popupContent);
+    });
+
+    return () => {
+      map.remove();
+      mapInstanceRef.current = null;
+    };
+  }, []);
+
   return (
     <div className={`rounded-xl overflow-hidden shadow-lg ${className}`}>
-      <MapContainer
-        center={villageCenter}
-        zoom={15}
-        scrollWheelZoom={false}
-        style={{ height: "100%", width: "100%", minHeight: "400px" }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <SetViewOnCenter center={villageCenter} />
-        {rtRwData.map((data) => (
-          <Marker key={data.id} position={data.position} icon={customIcon}>
-            <Popup>
-              <div className="p-2 min-w-[200px]">
-                <h3 className="font-bold text-lg text-primary mb-2">{data.name}</h3>
-                <div className="space-y-1 text-sm">
-                  <p className="flex justify-between">
-                    <span className="text-muted-foreground">Kepala Keluarga:</span>
-                    <span className="font-semibold">{data.kepalaKeluarga} KK</span>
-                  </p>
-                  <p className="flex justify-between">
-                    <span className="text-muted-foreground">Total Penduduk:</span>
-                    <span className="font-semibold">{data.jumlahPenduduk} jiwa</span>
-                  </p>
-                  <p className="flex justify-between">
-                    <span className="text-muted-foreground">Laki-laki:</span>
-                    <span className="font-semibold">{data.lakilaki} jiwa</span>
-                  </p>
-                  <p className="flex justify-between">
-                    <span className="text-muted-foreground">Perempuan:</span>
-                    <span className="font-semibold">{data.perempuan} jiwa</span>
-                  </p>
-                </div>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+      <div ref={mapRef} style={{ height: "100%", width: "100%", minHeight: "400px" }} />
     </div>
   );
 };
