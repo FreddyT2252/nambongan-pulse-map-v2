@@ -25,8 +25,8 @@ const LocationPickerMap = ({
   const mapInstanceRef = useRef<L.Map | null>(null);
   const markerRef = useRef<L.Marker | null>(null);
 
-  // Center on Desa Nambongan
-  const defaultCenter: [number, number] = [-7.0056, 110.4376];
+  // Center on Desa Nambongan, Sleman, Yogyakarta
+  const defaultCenter: [number, number] = [-7.7190, 110.3515];
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;

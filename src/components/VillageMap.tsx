@@ -31,12 +31,12 @@ interface RTRWData {
   perempuan: number;
 }
 
-// Data RT/RW Desa Nambongan (contoh koordinat)
+// Data RT/RW Desa Nambongan, Sleman, Yogyakarta
 const rtRwData: RTRWData[] = [
   {
     id: "rt01-rw01",
     name: "RT 01 / RW 01",
-    position: [-7.0051, 110.4381],
+    position: [-7.7185, 110.3520],
     kepalaKeluarga: 45,
     jumlahPenduduk: 180,
     lakilaki: 92,
@@ -45,7 +45,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt02-rw01",
     name: "RT 02 / RW 01",
-    position: [-7.0061, 110.4391],
+    position: [-7.7195, 110.3535],
     kepalaKeluarga: 52,
     jumlahPenduduk: 210,
     lakilaki: 105,
@@ -54,7 +54,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt03-rw01",
     name: "RT 03 / RW 01",
-    position: [-7.0041, 110.4401],
+    position: [-7.7175, 110.3550],
     kepalaKeluarga: 38,
     jumlahPenduduk: 155,
     lakilaki: 80,
@@ -63,7 +63,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt01-rw02",
     name: "RT 01 / RW 02",
-    position: [-7.0071, 110.4371],
+    position: [-7.7205, 110.3510],
     kepalaKeluarga: 60,
     jumlahPenduduk: 240,
     lakilaki: 122,
@@ -72,7 +72,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt02-rw02",
     name: "RT 02 / RW 02",
-    position: [-7.0081, 110.4361],
+    position: [-7.7215, 110.3495],
     kepalaKeluarga: 48,
     jumlahPenduduk: 195,
     lakilaki: 98,
@@ -81,7 +81,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt03-rw02",
     name: "RT 03 / RW 02",
-    position: [-7.0031, 110.4351],
+    position: [-7.7165, 110.3485],
     kepalaKeluarga: 42,
     jumlahPenduduk: 168,
     lakilaki: 85,
@@ -89,8 +89,8 @@ const rtRwData: RTRWData[] = [
   },
 ];
 
-// Center of the village (approximate)
-const villageCenter: [number, number] = [-7.0056, 110.4376];
+// Center of Desa Nambongan, Sleman, Yogyakarta
+const villageCenter: [number, number] = [-7.7190, 110.3515];
 
 interface VillageMapProps {
   className?: string;
