@@ -6,9 +6,9 @@ import { Users, Home, FileText, Image, ArrowRight, Calendar } from "lucide-react
 import heroImage from "@/assets/hero-village.jpg";
 
 const stats = [
-  { icon: Users, label: "Total Penduduk", value: "1,148", suffix: "jiwa" },
-  { icon: Home, label: "Kepala Keluarga", value: "285", suffix: "KK" },
-  { icon: FileText, label: "RT/RW", value: "6", suffix: "unit" },
+  { icon: Users, label: "Total Penduduk", value: "1,355", suffix: "jiwa" },
+  { icon: Home, label: "Kepala Keluarga", value: "334", suffix: "KK" },
+  { icon: FileText, label: "RT/RW", value: "8/4", suffix: "unit" },
 ];
 
 const latestNews = [
