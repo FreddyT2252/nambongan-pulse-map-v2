@@ -18,10 +18,10 @@ const Tentang = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto animate-fade-up">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Tentang Desa Nambongan
+              Tentang Pedukuhan Nambongan
             </h1>
             <p className="text-lg text-muted-foreground">
-              Mengenal lebih dekat Desa Nambongan, sejarah, dan masyarakatnya
+              Mengenal lebih dekat Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
             </p>
           </div>
         </div>
@@ -32,15 +32,16 @@ const Tentang = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Profil Desa</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Profil Pedukuhan</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Desa Nambongan adalah sebuah desa yang terletak di wilayah Jawa Tengah. 
-                Desa ini dikenal dengan keindahan alamnya yang asri, sawah-sawah hijau 
+                Pedukuhan Nambongan adalah sebuah pedukuhan yang terletak di Desa Tlogoadi, 
+                Kecamatan Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta. 
+                Pedukuhan ini dikenal dengan keindahan alamnya yang asri, sawah-sawah hijau 
                 yang membentang luas, serta masyarakat yang ramah dan gotong royong.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Dengan visi "Mewujudkan Desa Nambongan yang Maju, Mandiri, dan Sejahtera", 
-                pemerintah desa terus berupaya meningkatkan kualitas hidup masyarakat 
+                Dengan visi "Mewujudkan Pedukuhan Nambongan yang Maju, Mandiri, dan Sejahtera", 
+                warga pedukuhan terus berupaya meningkatkan kualitas hidup masyarakat 
                 melalui berbagai program pembangunan dan pemberdayaan.
               </p>
             </div>

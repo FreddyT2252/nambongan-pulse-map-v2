@@ -95,10 +95,10 @@ const Galeri = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto animate-fade-up">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Galeri Desa
+              Galeri Pedukuhan
             </h1>
             <p className="text-lg text-muted-foreground">
-              Dokumentasi kegiatan dan keindahan Desa Nambongan
+              Dokumentasi kegiatan dan keindahan Pedukuhan Nambongan
             </p>
           </div>
         </div>
