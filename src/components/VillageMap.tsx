@@ -31,67 +31,85 @@ interface RTRWData {
   perempuan: number;
 }
 
-// Data RT/RW Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
-// Koordinat sekitar Desa Tlogoadi, Mlati, Sleman
+// Data RT/RW Pedukuhan Nambongan, Desa Tlogoadi, Mlati, Sleman, Yogyakarta
+// Koordinat sekitar Desa Tlogoadi: -7.7318, 110.3320
 const rtRwData: RTRWData[] = [
   {
     id: "rt01-rw01",
     name: "RT 01 / RW 01",
-    position: [-7.7520, 110.3605],
+    position: [-7.7310, 110.3315],
+    kepalaKeluarga: 35,
+    jumlahPenduduk: 142,
+    lakilaki: 72,
+    perempuan: 70,
+  },
+  {
+    id: "rt02-rw01",
+    name: "RT 02 / RW 01",
+    position: [-7.7320, 110.3328],
+    kepalaKeluarga: 40,
+    jumlahPenduduk: 165,
+    lakilaki: 85,
+    perempuan: 80,
+  },
+  {
+    id: "rt01-rw02",
+    name: "RT 01 / RW 02",
+    position: [-7.7305, 110.3340],
+    kepalaKeluarga: 38,
+    jumlahPenduduk: 155,
+    lakilaki: 78,
+    perempuan: 77,
+  },
+  {
+    id: "rt02-rw02",
+    name: "RT 02 / RW 02",
+    position: [-7.7315, 110.3352],
+    kepalaKeluarga: 42,
+    jumlahPenduduk: 170,
+    lakilaki: 88,
+    perempuan: 82,
+  },
+  {
+    id: "rt01-rw03",
+    name: "RT 01 / RW 03",
+    position: [-7.7328, 110.3305],
     kepalaKeluarga: 45,
     jumlahPenduduk: 180,
     lakilaki: 92,
     perempuan: 88,
   },
   {
-    id: "rt02-rw01",
-    name: "RT 02 / RW 01",
-    position: [-7.7535, 110.3620],
-    kepalaKeluarga: 52,
-    jumlahPenduduk: 210,
-    lakilaki: 105,
-    perempuan: 105,
+    id: "rt02-rw03",
+    name: "RT 02 / RW 03",
+    position: [-7.7338, 110.3318],
+    kepalaKeluarga: 36,
+    jumlahPenduduk: 148,
+    lakilaki: 75,
+    perempuan: 73,
   },
   {
-    id: "rt03-rw01",
-    name: "RT 03 / RW 01",
-    position: [-7.7510, 110.3635],
-    kepalaKeluarga: 38,
-    jumlahPenduduk: 155,
-    lakilaki: 80,
-    perempuan: 75,
+    id: "rt01-rw04",
+    name: "RT 01 / RW 04",
+    position: [-7.7325, 110.3365],
+    kepalaKeluarga: 50,
+    jumlahPenduduk: 200,
+    lakilaki: 102,
+    perempuan: 98,
   },
   {
-    id: "rt01-rw02",
-    name: "RT 01 / RW 02",
-    position: [-7.7545, 110.3595],
-    kepalaKeluarga: 60,
-    jumlahPenduduk: 240,
-    lakilaki: 122,
-    perempuan: 118,
-  },
-  {
-    id: "rt02-rw02",
-    name: "RT 02 / RW 02",
-    position: [-7.7555, 110.3580],
+    id: "rt02-rw04",
+    name: "RT 02 / RW 04",
+    position: [-7.7335, 110.3378],
     kepalaKeluarga: 48,
     jumlahPenduduk: 195,
-    lakilaki: 98,
-    perempuan: 97,
-  },
-  {
-    id: "rt03-rw02",
-    name: "RT 03 / RW 02",
-    position: [-7.7500, 110.3570],
-    kepalaKeluarga: 42,
-    jumlahPenduduk: 168,
-    lakilaki: 85,
-    perempuan: 83,
+    lakilaki: 100,
+    perempuan: 95,
   },
 ];
 
-// Center of Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
-const villageCenter: [number, number] = [-7.7525, 110.3605];
+// Center of Pedukuhan Nambongan, Desa Tlogoadi, Mlati, Sleman, Yogyakarta
+const villageCenter: [number, number] = [-7.7318, 110.3340];
 
 interface VillageMapProps {
   className?: string;

@@ -25,8 +25,8 @@ const LocationPickerMap = ({
   const mapInstanceRef = useRef<L.Map | null>(null);
   const markerRef = useRef<L.Marker | null>(null);
 
-  // Center on Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
-  const defaultCenter: [number, number] = [-7.7525, 110.3605];
+  // Center on Pedukuhan Nambongan, Desa Tlogoadi, Mlati, Sleman, Yogyakarta
+  const defaultCenter: [number, number] = [-7.7318, 110.3340];
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
