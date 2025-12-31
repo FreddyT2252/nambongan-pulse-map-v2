@@ -25,8 +25,8 @@ const LocationPickerMap = ({
   const mapInstanceRef = useRef<L.Map | null>(null);
   const markerRef = useRef<L.Marker | null>(null);
 
-  // Center on Desa Nambongan, Sleman, Yogyakarta
-  const defaultCenter: [number, number] = [-7.7190, 110.3515];
+  // Center on Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
+  const defaultCenter: [number, number] = [-7.7525, 110.3605];
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
@@ -77,7 +77,7 @@ const LocationPickerMap = ({
   }, [selectedLocation]);
 
   return (
-    <div className={`rounded-xl overflow-hidden border border-border ${className}`}>
+    <div className={`rounded-xl overflow-hidden border border-border relative z-0 ${className}`}>
       <div ref={mapRef} style={{ height: "100%", width: "100%", minHeight: "300px" }} />
       <div className="bg-muted px-4 py-2 text-sm text-muted-foreground">
         Klik pada peta untuk menandai lokasi

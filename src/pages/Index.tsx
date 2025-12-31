@@ -14,16 +14,16 @@ const stats = [
 const latestNews = [
   {
     id: 1,
-    title: "Gotong Royong Bersih Desa",
+    title: "Gotong Royong Bersih Pedukuhan",
     date: "28 Des 2025",
-    excerpt: "Warga Desa Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan desa...",
+    excerpt: "Warga Pedukuhan Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan...",
     image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
   },
   {
     id: 2,
     title: "Musyawarah Perencanaan Pembangunan",
     date: "25 Des 2025",
-    excerpt: "Desa Nambongan mengadakan musrenbang untuk merencanakan pembangunan tahun depan...",
+    excerpt: "Pedukuhan Nambongan mengadakan musyawarah untuk merencanakan pembangunan tahun depan...",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop",
   },
   {
@@ -49,10 +49,10 @@ const Index = () => {
           <div className="animate-fade-up">
             <p className="text-lg md:text-xl mb-4 opacity-90 font-medium">Selamat Datang di</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Desa Nambongan
+              Pedukuhan Nambongan
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90">
-              Desa yang asri dan nyaman, tempat harmoni antara tradisi dan kemajuan bersemi
+              Pedukuhan yang asri di Desa Tlogoadi, Sleman, Yogyakarta - tempat harmoni antara tradisi dan kemajuan bersemi
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/tentang">
@@ -102,7 +102,7 @@ const Index = () => {
               Berita Terbaru
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Informasi dan kegiatan terkini dari Desa Nambongan
+              Informasi dan kegiatan terkini dari Pedukuhan Nambongan
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -150,10 +150,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Galeri Desa
+              Galeri Pedukuhan
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Dokumentasi kegiatan dan keindahan Desa Nambongan
+              Dokumentasi kegiatan dan keindahan Pedukuhan Nambongan
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
@@ -193,7 +193,7 @@ const Index = () => {
             Ada Keluhan atau Saran?
           </h2>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-            Kami siap mendengar aspirasi Anda. Sampaikan laporan atau saran untuk kemajuan desa bersama.
+            Kami siap mendengar aspirasi Anda. Sampaikan laporan atau saran untuk kemajuan pedukuhan bersama.
           </p>
           <Link to="/laporan">
             <Button variant="hero" size="xl">

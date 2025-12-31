@@ -31,12 +31,13 @@ interface RTRWData {
   perempuan: number;
 }
 
-// Data RT/RW Desa Nambongan, Sleman, Yogyakarta
+// Data RT/RW Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
+// Koordinat sekitar Desa Tlogoadi, Mlati, Sleman
 const rtRwData: RTRWData[] = [
   {
     id: "rt01-rw01",
     name: "RT 01 / RW 01",
-    position: [-7.7185, 110.3520],
+    position: [-7.7520, 110.3605],
     kepalaKeluarga: 45,
     jumlahPenduduk: 180,
     lakilaki: 92,
@@ -45,7 +46,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt02-rw01",
     name: "RT 02 / RW 01",
-    position: [-7.7195, 110.3535],
+    position: [-7.7535, 110.3620],
     kepalaKeluarga: 52,
     jumlahPenduduk: 210,
     lakilaki: 105,
@@ -54,7 +55,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt03-rw01",
     name: "RT 03 / RW 01",
-    position: [-7.7175, 110.3550],
+    position: [-7.7510, 110.3635],
     kepalaKeluarga: 38,
     jumlahPenduduk: 155,
     lakilaki: 80,
@@ -63,7 +64,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt01-rw02",
     name: "RT 01 / RW 02",
-    position: [-7.7205, 110.3510],
+    position: [-7.7545, 110.3595],
     kepalaKeluarga: 60,
     jumlahPenduduk: 240,
     lakilaki: 122,
@@ -72,7 +73,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt02-rw02",
     name: "RT 02 / RW 02",
-    position: [-7.7215, 110.3495],
+    position: [-7.7555, 110.3580],
     kepalaKeluarga: 48,
     jumlahPenduduk: 195,
     lakilaki: 98,
@@ -81,7 +82,7 @@ const rtRwData: RTRWData[] = [
   {
     id: "rt03-rw02",
     name: "RT 03 / RW 02",
-    position: [-7.7165, 110.3485],
+    position: [-7.7500, 110.3570],
     kepalaKeluarga: 42,
     jumlahPenduduk: 168,
     lakilaki: 85,
@@ -89,8 +90,8 @@ const rtRwData: RTRWData[] = [
   },
 ];
 
-// Center of Desa Nambongan, Sleman, Yogyakarta
-const villageCenter: [number, number] = [-7.7190, 110.3515];
+// Center of Pedukuhan Nambongan, Desa Tlogoadi, Sleman, Yogyakarta
+const villageCenter: [number, number] = [-7.7525, 110.3605];
 
 interface VillageMapProps {
   className?: string;
@@ -149,7 +150,7 @@ const VillageMap = ({ className = "" }: VillageMapProps) => {
   }, []);
 
   return (
-    <div className={`rounded-xl overflow-hidden shadow-lg ${className}`}>
+    <div className={`rounded-xl overflow-hidden shadow-lg relative z-0 ${className}`}>
       <div ref={mapRef} style={{ height: "100%", width: "100%", minHeight: "400px" }} />
     </div>
   );

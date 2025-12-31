@@ -6,20 +6,20 @@ import { Button } from "@/components/ui/button";
 const newsData = [
   {
     id: 1,
-    title: "Gotong Royong Bersih Desa",
+    title: "Gotong Royong Bersih Pedukuhan",
     date: "28 Desember 2025",
     category: "Kegiatan",
-    excerpt: "Warga Desa Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan desa. Kegiatan ini diikuti oleh seluruh warga dari berbagai RT/RW.",
+    excerpt: "Warga Pedukuhan Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan. Kegiatan ini diikuti oleh seluruh warga dari berbagai RT/RW.",
     content: "Kegiatan gotong royong ini merupakan tradisi rutin yang dilaksanakan setiap bulan...",
     image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=500&fit=crop",
   },
   {
     id: 2,
-    title: "Musyawarah Perencanaan Pembangunan Desa",
+    title: "Musyawarah Perencanaan Pembangunan Pedukuhan",
     date: "25 Desember 2025",
     category: "Pemerintahan",
-    excerpt: "Desa Nambongan mengadakan musrenbang untuk merencanakan pembangunan tahun depan. Berbagai usulan dari warga ditampung dalam musyawarah ini.",
-    content: "Musrenbang desa tahun ini membahas berbagai program prioritas...",
+    excerpt: "Pedukuhan Nambongan mengadakan musyawarah untuk merencanakan pembangunan tahun depan. Berbagai usulan dari warga ditampung.",
+    content: "Musyawarah pedukuhan tahun ini membahas berbagai program prioritas...",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=500&fit=crop",
   },
   {
@@ -51,10 +51,10 @@ const newsData = [
   },
   {
     id: 6,
-    title: "Festival Budaya Desa Nambongan",
+    title: "Festival Budaya Pedukuhan Nambongan",
     date: "5 Desember 2025",
     category: "Budaya",
-    excerpt: "Desa Nambongan menggelar festival budaya tahunan yang menampilkan berbagai kesenian tradisional. Acara ini menarik banyak pengunjung dari luar desa.",
+    excerpt: "Pedukuhan Nambongan menggelar festival budaya tahunan yang menampilkan berbagai kesenian tradisional. Acara ini menarik banyak pengunjung.",
     content: "Festival budaya menjadi ajang pelestarian tradisi dan budaya lokal...",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=500&fit=crop",
   },
@@ -77,10 +77,10 @@ const Berita = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto animate-fade-up">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Berita Desa
+              Berita Pedukuhan
             </h1>
             <p className="text-lg text-muted-foreground">
-              Informasi terbaru seputar kegiatan dan perkembangan Desa Nambongan
+              Informasi terbaru seputar kegiatan dan perkembangan Pedukuhan Nambongan
             </p>
           </div>
         </div>

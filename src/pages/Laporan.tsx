@@ -105,7 +105,7 @@ const Laporan = () => {
               Laporan Warga
             </h1>
             <p className="text-lg text-muted-foreground">
-              Sampaikan keluhan, saran, atau aspirasi Anda untuk kemajuan Desa Nambongan
+              Sampaikan keluhan, saran, atau aspirasi Anda untuk kemajuan Pedukuhan Nambongan
             </p>
           </div>
         </div>

@@ -6,17 +6,17 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Info Desa */}
+          {/* Info Pedukuhan */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center">
                 <MapPin className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold">Desa Nambongan</h3>
+              <h3 className="text-xl font-bold">Pedukuhan Nambongan</h3>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Desa Nambongan adalah desa yang terletak di wilayah Jawa Tengah, 
-              dikenal dengan keramahan warganya dan keindahan alamnya.
+              Pedukuhan Nambongan terletak di Desa Tlogoadi, Kecamatan Mlati, 
+              Kabupaten Sleman, DIY. Dikenal dengan keramahan warganya dan keindahan alamnya.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Desa Nambongan. Hak Cipta Dilindungi.</p>
+          <p>&copy; {new Date().getFullYear()} Pedukuhan Nambongan, Desa Tlogoadi. Hak Cipta Dilindungi.</p>
         </div>
       </div>
     </footer>

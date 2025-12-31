@@ -26,8 +26,8 @@ const Navbar = () => {
               <MapPin className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-foreground leading-tight">Desa Nambongan</h1>
-              <p className="text-xs text-muted-foreground">Maju Bersama</p>
+              <h1 className="text-lg font-bold text-foreground leading-tight">Pedukuhan Nambongan</h1>
+              <p className="text-xs text-muted-foreground">Desa Tlogoadi, Sleman</p>
             </div>
           </Link>
 
