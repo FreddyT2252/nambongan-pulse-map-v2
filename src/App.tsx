@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Tentang from "./pages/Tentang";
 import Berita from "./pages/Berita";
 import Galeri from "./pages/Galeri";
+import Video from "./pages/Video";
 import Laporan from "./pages/Laporan";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/tentang" element={<Tentang />} />
           <Route path="/berita" element={<Berita />} />
           <Route path="/galeri" element={<Galeri />} />
+          <Route path="/video" element={<Video />} />
           <Route path="/laporan" element={<Laporan />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

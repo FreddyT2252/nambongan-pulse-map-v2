@@ -11,27 +11,30 @@ const stats = [
   { icon: FileText, label: "RT/RW", value: "8/4", suffix: "unit" },
 ];
 
+// Placeholder image untuk berita
+const placeholderImage = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop";
+
 const latestNews = [
   {
     id: 1,
     title: "Gotong Royong Bersih Pedukuhan",
     date: "28 Des 2025",
     excerpt: "Warga Pedukuhan Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan...",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 2,
     title: "Musyawarah Perencanaan Pembangunan",
     date: "25 Des 2025",
     excerpt: "Pedukuhan Nambongan mengadakan musyawarah untuk merencanakan pembangunan tahun depan...",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 3,
     title: "Posyandu Balita Rutin",
     date: "20 Des 2025",
     excerpt: "Kegiatan posyandu balita dilaksanakan setiap bulan untuk memantau tumbuh kembang anak...",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop",
+    image: placeholderImage,
   },
 ];
 
@@ -158,10 +161,10 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {[
-              "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
             ].map((img, index) => (
               <div
                 key={index}

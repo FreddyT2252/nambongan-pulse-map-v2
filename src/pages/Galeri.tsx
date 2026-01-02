@@ -3,79 +3,23 @@ import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
+// Placeholder images dengan variasi minimal
+const placeholder1 = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop";
+const placeholder2 = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop";
+
 const galleryImages = [
-  {
-    id: 1,
-    src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop",
-    title: "Kegiatan Gotong Royong",
-    category: "Kegiatan",
-  },
-  {
-    id: 2,
-    src: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&h=600&fit=crop",
-    title: "Pemberdayaan Masyarakat",
-    category: "Sosial",
-  },
-  {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&h=600&fit=crop",
-    title: "Kegiatan Warga",
-    category: "Sosial",
-  },
-  {
-    id: 4,
-    src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop",
-    title: "Posyandu Balita",
-    category: "Kesehatan",
-  },
-  {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop",
-    title: "Bersih Desa",
-    category: "Kegiatan",
-  },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
-    title: "Musyawarah Desa",
-    category: "Pemerintahan",
-  },
-  {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
-    title: "Festival Budaya",
-    category: "Budaya",
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop",
-    title: "Pelatihan UMKM",
-    category: "Ekonomi",
-  },
-  {
-    id: 9,
-    src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
-    title: "Pelayanan Kesehatan",
-    category: "Kesehatan",
-  },
-  {
-    id: 10,
-    src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop",
-    title: "Pembangunan Infrastruktur",
-    category: "Infrastruktur",
-  },
-  {
-    id: 11,
-    src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&h=600&fit=crop",
-    title: "Pemandangan Desa",
-    category: "Alam",
-  },
-  {
-    id: 12,
-    src: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&h=600&fit=crop",
-    title: "Sawah Desa",
-    category: "Alam",
-  },
+  { id: 1, src: placeholder1, title: "Kegiatan Gotong Royong", category: "Kegiatan" },
+  { id: 2, src: placeholder2, title: "Pemberdayaan Masyarakat", category: "Sosial" },
+  { id: 3, src: placeholder1, title: "Kegiatan Warga", category: "Sosial" },
+  { id: 4, src: placeholder2, title: "Posyandu Balita", category: "Kesehatan" },
+  { id: 5, src: placeholder1, title: "Bersih Desa", category: "Kegiatan" },
+  { id: 6, src: placeholder2, title: "Musyawarah Desa", category: "Pemerintahan" },
+  { id: 7, src: placeholder1, title: "Festival Budaya", category: "Budaya" },
+  { id: 8, src: placeholder2, title: "Pelatihan UMKM", category: "Ekonomi" },
+  { id: 9, src: placeholder1, title: "Pelayanan Kesehatan", category: "Kesehatan" },
+  { id: 10, src: placeholder2, title: "Pembangunan Infrastruktur", category: "Infrastruktur" },
+  { id: 11, src: placeholder1, title: "Pemandangan Desa", category: "Alam" },
+  { id: 12, src: placeholder2, title: "Sawah Desa", category: "Alam" },
 ];
 
 const categories = ["Semua", "Kegiatan", "Sosial", "Kesehatan", "Pemerintahan", "Budaya", "Ekonomi", "Infrastruktur", "Alam"];
