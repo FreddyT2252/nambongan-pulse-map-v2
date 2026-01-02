@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Tentang", path: "/tentang" },
     { name: "Berita", path: "/berita" },
     { name: "Galeri", path: "/galeri" },
+    { name: "Video", path: "/video" },
     { name: "Laporan", path: "/laporan" },
   ];
 

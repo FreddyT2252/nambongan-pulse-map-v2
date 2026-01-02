@@ -3,6 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Placeholder image untuk berita
+const placeholderImage = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop";
+
 const newsData = [
   {
     id: 1,
@@ -11,7 +14,7 @@ const newsData = [
     category: "Kegiatan",
     excerpt: "Warga Pedukuhan Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan. Kegiatan ini diikuti oleh seluruh warga dari berbagai RT/RW.",
     content: "Kegiatan gotong royong ini merupakan tradisi rutin yang dilaksanakan setiap bulan...",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=500&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 2,
@@ -20,7 +23,7 @@ const newsData = [
     category: "Pemerintahan",
     excerpt: "Pedukuhan Nambongan mengadakan musyawarah untuk merencanakan pembangunan tahun depan. Berbagai usulan dari warga ditampung.",
     content: "Musyawarah pedukuhan tahun ini membahas berbagai program prioritas...",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=500&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 3,
@@ -29,7 +32,7 @@ const newsData = [
     category: "Kesehatan",
     excerpt: "Kegiatan posyandu balita dilaksanakan setiap bulan untuk memantau tumbuh kembang anak. Ibu-ibu warga desa antusias mengikuti kegiatan ini.",
     content: "Posyandu merupakan program kesehatan masyarakat yang sangat penting...",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 4,
@@ -38,7 +41,7 @@ const newsData = [
     category: "Ekonomi",
     excerpt: "Pemerintah desa bekerja sama dengan Dinas Koperasi mengadakan pelatihan kewirausahaan untuk warga. Peserta diajarkan cara mengelola usaha kecil.",
     content: "Pelatihan ini bertujuan meningkatkan kemampuan ekonomi warga desa...",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=500&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 5,
@@ -47,7 +50,7 @@ const newsData = [
     category: "Infrastruktur",
     excerpt: "Pemerintah desa telah menyelesaikan perbaikan jalan di RT 03 yang sempat rusak akibat hujan deras. Warga kini dapat beraktivitas dengan nyaman.",
     content: "Perbaikan jalan ini menggunakan dana desa yang telah dialokasikan...",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop",
+    image: placeholderImage,
   },
   {
     id: 6,
@@ -56,7 +59,7 @@ const newsData = [
     category: "Budaya",
     excerpt: "Pedukuhan Nambongan menggelar festival budaya tahunan yang menampilkan berbagai kesenian tradisional. Acara ini menarik banyak pengunjung.",
     content: "Festival budaya menjadi ajang pelestarian tradisi dan budaya lokal...",
-    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=500&fit=crop",
+    image: placeholderImage,
   },
 ];
 
