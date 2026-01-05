@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import { Users, Home, FileText, Image, ArrowRight, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-village.jpg";
+import { newsData } from "@/data/newsData";
+import { getRandomGalleryImages } from "@/data/galleryData";
 
 const stats = [
   { icon: Users, label: "Total Penduduk", value: "1,355", suffix: "jiwa" },
@@ -11,34 +14,13 @@ const stats = [
   { icon: FileText, label: "RT/RW", value: "8/4", suffix: "unit" },
 ];
 
-// Placeholder image untuk berita
-const placeholderImage = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop";
-
-const latestNews = [
-  {
-    id: 1,
-    title: "Gotong Royong Bersih Pedukuhan",
-    date: "28 Des 2025",
-    excerpt: "Warga Pedukuhan Nambongan mengadakan kegiatan gotong royong membersihkan lingkungan...",
-    image: placeholderImage,
-  },
-  {
-    id: 2,
-    title: "Musyawarah Perencanaan Pembangunan",
-    date: "25 Des 2025",
-    excerpt: "Pedukuhan Nambongan mengadakan musyawarah untuk merencanakan pembangunan tahun depan...",
-    image: placeholderImage,
-  },
-  {
-    id: 3,
-    title: "Posyandu Balita Rutin",
-    date: "20 Des 2025",
-    excerpt: "Kegiatan posyandu balita dilaksanakan setiap bulan untuk memantau tumbuh kembang anak...",
-    image: placeholderImage,
-  },
-];
+// Ambil 3 berita terbaru dari newsData
+const latestNews = newsData.slice(0, 3);
 
 const Index = () => {
+  // Ambil 4 gambar galeri secara acak
+  const randomGalleryImages = useMemo(() => getRandomGalleryImages(4), []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -110,31 +92,32 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {latestNews.map((news, index) => (
-              <Card
-                key={news.id}
-                className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={news.image}
-                    alt={news.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                    <Calendar className="w-4 h-4" />
-                    {news.date}
+              <Link key={news.id} to={`/berita/${news.id}`}>
+                <Card
+                  className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-up cursor-pointer"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={news.image}
+                      alt={news.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
-                    {news.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    {news.excerpt}
-                  </p>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                      <Calendar className="w-4 h-4" />
+                      {news.date}
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
+                      {news.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {news.excerpt}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-10">
@@ -160,19 +143,14 @@ const Index = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {[
-              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
-            ].map((img, index) => (
+            {randomGalleryImages.map((img, index) => (
               <div
-                key={index}
+                key={img.id}
                 className="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <img
-                  src={img}
-                  alt={`Galeri ${index + 1}`}
+                  src={img.src}
+                  alt={img.title}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
