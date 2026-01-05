@@ -13,7 +13,6 @@ const Laporan = () => {
   const [formData, setFormData] = useState({
     nama: "",
     telepon: "",
-    email: "",
     kategori: "",
     deskripsi: "",
   });
@@ -76,7 +75,6 @@ const Laporan = () => {
     setFormData({
       nama: "",
       telepon: "",
-      email: "",
       kategori: "",
       deskripsi: "",
     });
@@ -147,35 +145,22 @@ const Laporan = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="email@contoh.com"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="kategori">Kategori Laporan</Label>
-                      <select
-                        id="kategori"
-                        name="kategori"
-                        value={formData.kategori}
-                        onChange={handleInputChange}
-                        className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground"
-                      >
-                        <option value="">Pilih Kategori</option>
-                        {categories.map((cat) => (
-                          <option key={cat} value={cat}>
-                            {cat}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="kategori">Kategori Laporan</Label>
+                    <select
+                      id="kategori"
+                      name="kategori"
+                      value={formData.kategori}
+                      onChange={handleInputChange}
+                      className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground"
+                    >
+                      <option value="">Pilih Kategori</option>
+                      {categories.map((cat) => (
+                        <option key={cat} value={cat}>
+                          {cat}
+                        </option>
+                      ))}
+                    </select>
                   </div>
 
                   {/* Description */}
