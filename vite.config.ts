@@ -8,7 +8,18 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+
+    proxy: {
+      // semua request yang mulai dengan /api/news akan diteruskan ke script.google.com
+      "/api/news": {
+        target: "https://script.google.com",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => p.replace(/^\/api\/news/, ""),
+      },
+    },
   },
+
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

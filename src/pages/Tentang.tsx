@@ -10,6 +10,8 @@ const totalStats = {
   totalPerempuan: rtRwData.reduce((acc, curr) => acc + curr.perempuan, 0),
 };
 
+
+
 const Tentang = () => {
   return (
     <Layout>
