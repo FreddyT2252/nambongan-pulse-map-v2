@@ -12,10 +12,10 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center">
                 <MapPin className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold">Pedukuhan Nambongan</h3>
+              <h3 className="text-xl font-bold">Padukuhan Nambongan</h3>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Pedukuhan Nambongan terletak di Desa Tlogoadi, Kecamatan Mlati, 
+              Padukuhan Nambongan terletak di Desa Tlogoadi, Kecamatan Mlati, 
               Kabupaten Sleman, DIY. Dikenal dengan keramahan warganya dan keindahan alamnya.
             </p>
           </div>

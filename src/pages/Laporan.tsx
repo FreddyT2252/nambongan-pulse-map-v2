@@ -161,13 +161,6 @@ const Laporan: React.FC = () => {
       return false;
     }
 
-    if (!API_TOKEN) {
-      toast.warning("API token kosong", {
-        description:
-          "Boleh jalan, tapi lebih aman isi VITE_NEWS_API_TOKEN untuk cegah spam.",
-      });
-    }
-
     if (!LAPORAN_POST_URL) {
       toast.error("URL laporan tidak valid");
       return false;
@@ -210,9 +203,12 @@ const Laporan: React.FC = () => {
 
       const res = await fetch(LAPORAN_POST_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: new URLSearchParams({
+          payload: JSON.stringify(payload),
+        }).toString(),
       });
+      
 
       // Apps Script kadang response JSON sebagai text
       const text = await res.text();

@@ -5,9 +5,6 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { fetchNewsDetail, type NewsDetail } from "@/lib/newsApi";
 
-const placeholderImage =
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop";
-
 const categoryColors: Record<string, string> = {
   Kegiatan: "bg-primary/10 text-primary",
   Pemerintahan: "bg-blue-100 text-blue-700",
@@ -18,8 +15,8 @@ const categoryColors: Record<string, string> = {
 };
 
 function formatDate(dateString: string) {
-  const d = new Date(dateString);
-  if (Number.isNaN(d.getTime())) return dateString; // fallback kalau bukan ISO
+  const d = new Date(dateString); 
+  if (Number.isNaN(d.getTime())) return dateString;
   return d.toLocaleString("id-ID", {
     day: "2-digit",
     month: "long",
@@ -57,7 +54,7 @@ const BeritaDetail = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 py-20 text-center">
           <p className="text-muted-foreground">Memuat berita...</p>
         </div>
       </Layout>
@@ -84,70 +81,62 @@ const BeritaDetail = () => {
 
   return (
     <Layout>
-      {/* Hero Image (sementara pakai placeholder) */}
-      <div className="relative h-[40vh] md:h-[50vh]">
-        <img
-          src={placeholderImage}
-          alt={news.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-      </div>
-
-      {/* Content */}
-      <section className="py-12">
+      {/* Background Header Simple */}
+      <div className="bg-primary/5 py-12 border-b">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto -mt-32 relative z-10">
-            <Link to="/berita">
-              <Button variant="outline" size="sm" className="mb-6 bg-background">
+          <div className="max-w-3xl mx-auto">
+             <Link to="/berita">
+              <Button variant="ghost" size="sm" className="mb-6 -ml-2 text-muted-foreground">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Kembali
+                Kembali ke Berita
               </Button>
             </Link>
+          </div>
+        </div>
+      </div>
 
-            <div className="bg-card rounded-2xl shadow-xl p-6 md:p-10 animate-fade-up">
-              {/* Meta */}
-              <div className="flex flex-wrap items-center gap-4 mb-6">
-                <span
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium ${
-                    categoryColors[news.category] || "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  <Tag className="w-3.5 h-3.5 inline mr-1.5" />
-                  {news.category}
-                </span>
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <article className="max-w-3xl mx-auto">
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <span
+                className={`px-4 py-1.5 rounded-full text-sm font-medium ${
+                  categoryColors[news.category] || "bg-muted text-muted-foreground"
+                }`}
+              >
+                <Tag className="w-3.5 h-3.5 inline mr-1.5" />
+                {news.category}
+              </span>
 
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  {formatDate(news.date)}
-                </div>
-              </div>
-
-              {/* Title */}
-              <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
-                {news.title}
-              </h1>
-
-              {/* Excerpt */}
-              {news.excerpt && (
-                <p className="text-base md:text-lg text-muted-foreground mb-6">
-                  {news.excerpt}
-                </p>
-              )}
-
-              {/* Content */}
-              <div className="prose prose-lg max-w-none text-muted-foreground">
-                {(news.content || "")
-                  .split("\n\n")
-                  .filter(Boolean)
-                  .map((paragraph, index) => (
-                    <p key={index} className="mb-4 leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Calendar className="w-4 h-4" />
+                {formatDate(news.date)}
               </div>
             </div>
-          </div>
+
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight ">
+              {news.title}
+            </h1>
+
+            {/* Author Section */}
+            <p className="text-lg text-foreground/70 mb-8 pb-8 border-b italic">
+              Ditulis oleh <span className="font-semibold text-foreground">
+                {news?.author && String(news.author).trim() !== "" ? news.author : "Administrator"}
+              </span>
+            </p>
+
+            {/* Content Section */}
+            <div className="prose prose-lg max-w-none text-muted-foreground text-justify">
+              {(news.content || "")
+                .split("\n\n")
+                .filter(Boolean)
+                .map((paragraph, index) => (
+                  <p key={index} className="mb-6 leading-relaxed text-foreground/90">
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+          </article>
         </div>
       </section>
     </Layout>

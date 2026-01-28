@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Play, Calendar } from "lucide-react";
 
 // Rick Roll sebagai placeholder
-const RICK_ROLL_ID = "dQw4w9WgXcQ";
+const RICK_ROLL_ID = "neerKcLIV6Y";
 
 const videoData = [
   {

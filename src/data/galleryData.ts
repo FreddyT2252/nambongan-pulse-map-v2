@@ -29,6 +29,7 @@ export const galleryImagess = [
   
   // 10. Komunitas bergotong royong
   "https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg",
+  
 ];
 
 

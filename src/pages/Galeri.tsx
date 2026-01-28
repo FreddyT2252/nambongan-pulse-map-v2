@@ -3,9 +3,21 @@ import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import { galleryImages } from "@/data/galleryData";
+// Import foto langsung di sini
+import Gambar1 from "@/assets/Gambar1.jpeg";
 
 const Galeri = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  // Kita buat array baru yang menggabungkan foto baru + data dari galleryData
+  const allImages = [
+    {
+      id: "manual-1",
+      src: Gambar1,
+      title: "Kegiatan Pedukuhan",
+    },
+    ...galleryImages,
+  ];
+
+  const [selectedImage, setSelectedImage] = useState<typeof allImages[0] | null>(null);
 
   return (
     <Layout>
@@ -27,7 +39,8 @@ const Galeri = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-            {galleryImages.map((image, index) => (
+            {/* Sekarang kita looping dari allImages yang sudah digabung */}
+            {allImages.map((image, index) => (
               <div
                 key={image.id}
                 className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in"
