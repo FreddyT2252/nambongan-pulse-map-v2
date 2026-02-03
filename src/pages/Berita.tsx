@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { categoryColors } from "@/data/newsData";
 import { useEffect, useMemo, useState } from "react";
 import { fetchNewsList, type NewsListItem } from "@/lib/newsApi";
 
@@ -41,7 +40,7 @@ const Berita = () => {
         const data = await fetchNewsList();
         setNewsData(data);
       } catch (e: any) {
-        setErr(e?.message || "Gagal Memuat berita");
+        setErr(e?.message || "Gagal memuat berita");
       } finally {
         setLoading(false);
       }
@@ -50,7 +49,6 @@ const Berita = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto animate-fade-up">
@@ -79,12 +77,8 @@ const Berita = () => {
                   >
                     <CardContent className="p-6">
                       <div className="flex flex-wrap items-center gap-3 mb-3">
-                        <span
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            categoryColors[news.category] || "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          {news.category}
+                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                          {news.category || "Lainnya"}
                         </span>
 
                         <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -96,9 +90,7 @@ const Berita = () => {
                       <h2 className="text-2xl font-bold text-foreground mb-2 leading-tight">
                         {news.title}
                       </h2>
-                      <p className="text-muted-foreground mb-4 line-clamp-2">
-                        {news.excerpt}
-                      </p>
+                      <p className="text-muted-foreground mb-4 line-clamp-2">{news.excerpt}</p>
 
                       <Button variant="link" className="p-0 h-auto text-primary font-semibold">
                         Baca Selengkapnya

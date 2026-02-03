@@ -1,23 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X } from "lucide-react";
-import { galleryImages } from "@/data/galleryData";
-// Import foto langsung di sini
-import Gambar1 from "@/assets/Gambar1.jpeg";
+import { X, Loader2 } from "lucide-react";
+
+
+const API_URL = import.meta.env.VITE_NEWS_API_BASE_URL;
+
+interface GalleryImage {
+  id: string;
+  title: string;
+  src: string;
+  thumbnail: string;
+}
 
 const Galeri = () => {
-  // Kita buat array baru yang menggabungkan foto baru + data dari galleryData
-  const allImages = [
-    {
-      id: "manual-1",
-      src: Gambar1,
-      title: "Kegiatan Pedukuhan",
-    },
-    ...galleryImages,
-  ];
+  const [images, setImages] = useState<GalleryImage[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const [selectedImage, setSelectedImage] = useState<typeof allImages[0] | null>(null);
+  useEffect(() => {
+    fetchGallery();
+  }, []);
+
+  const fetchGallery = async () => {
+    try {
+      setLoading(true);
+      setError("");
+
+      const response = await fetch(`${API_URL}?route=gallery&action=list`);
+      const data = await response.json();
+
+      if (data.ok) {
+        setImages(data.data);
+      } else {
+        setError(data.error || "Gagal memuat galeri");
+      }
+    } catch (err) {
+      console.error("Error fetching gallery:", err);
+      setError("Gagal terhubung ke server");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Layout>
@@ -38,30 +63,61 @@ const Galeri = () => {
       {/* Gallery Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-            {/* Sekarang kita looping dari allImages yang sudah digabung */}
-            {allImages.map((image, index) => (
-              <div
-                key={image.id}
-                className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in"
-                style={{ animationDelay: `${index * 50}ms` }}
-                onClick={() => setSelectedImage(image)}
+          {/* Loading State */}
+          {loading && (
+            <div className="flex justify-center items-center py-20">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              <span className="ml-3 text-muted-foreground">Memuat galeri...</span>
+            </div>
+          )}
+
+          {/* Error State */}
+          {error && (
+            <div className="text-center py-20">
+              <p className="text-red-500 mb-4">{error}</p>
+              <button
+                onClick={fetchGallery}
+                className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
               >
-                <img
-                  src={image.src}
-                  alt={image.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-primary-foreground font-medium text-sm">
-                      {image.title}
-                    </p>
+                Coba Lagi
+              </button>
+            </div>
+          )}
+
+          {/* Gallery Grid */}
+          {!loading && !error && images.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+              {images.map((image, index) => (
+                <div
+                  key={image.id}
+                  className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-primary-foreground font-medium text-sm">
+                        {image.title}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
+
+          {/* Empty State */}
+          {!loading && !error && images.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-muted-foreground">Belum ada foto di galeri</p>
+            </div>
+          )}
         </div>
       </section>
 
